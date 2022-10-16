@@ -1,0 +1,59 @@
+@import '../../abstract/variables';
+.header{
+    grid-column: 1 / 11;
+    grid-row: 1 / 2;
+    @include grid; 
+    justify-items: center;
+    align-items: center;
+    padding: 1rem 0;
+    // color: #fff;
+
+    &__link{
+        grid-column: 2 / 4;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: .5rem 5rem;
+        color: #fff;
+        border-radius: .5rem;
+        background-color: $color-primary;
+        
+        @include respond(tab-port){
+            display: none;
+        }   
+    }
+    &__secLink{
+        text-decoration: none;
+        color: #fff;
+        transition: all .2s;
+        &:hover{
+            color: $color-primary;
+        }
+    }
+    &__sections{
+        grid-column: 5 / 9;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: .2rem;
+        justify-items: center;
+        font-size: 2rem;
+
+        @include respond(tab-port){
+            display: none;
+        }
+    }
+    &__logo{
+        grid-column: 9 / 10;
+        height: 7rem;
+        width: auto;
+        @include respond(tab-port){
+            height: 12rem;
+        }
+    }
+}
+.header.white{ 
+    background-color: #fff;
+}  
+.header__secLink.black{
+    color: black;
+}

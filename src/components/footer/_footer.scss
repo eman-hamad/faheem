@@ -1,0 +1,56 @@
+.footer{
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+
+    display: grid;
+    grid-template-columns: 50rem 1fr;
+    justify-items: center;
+    align-items: center;
+    padding-top: 1rem;
+    @include respond(tab-land){
+        grid-template-columns: 15rem 1fr;
+    }
+    @include respond(phone){
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, min-content);
+    }
+    
+    &__caption{
+        grid-column: 1 / -1;
+        font-size: 1.5rem;
+        grid-row: 1 / -1;
+        color: #fff;
+        @include respond(tab-land){
+            font-size: 4rem;
+        }
+        @include respond(phone){
+            grid-row: 1 / 2;
+        }
+    } 
+    &__social{
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+        display: flex;
+        align-self: center;
+        @include respond(tab-port){
+            grid-column: 1 / -1;
+            grid-row: 2 / 3;
+        }
+    }
+    &__app{
+        color: #fff;
+        margin: 0 .8rem;
+        font-size: 2.5rem;
+        transition: all .2s;
+        &:hover{
+            color: gray;
+        }
+        @include respond(tab-port){
+
+            font-size: 3.5rem;
+        }
+    }
+}
+.footer.grey{
+    background-color: rgb(59, 59, 59);
+}

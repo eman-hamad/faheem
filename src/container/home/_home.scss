@@ -1,0 +1,216 @@
+@import '../../abstract/variables';
+.home{
+    @include grid;
+    grid-template-rows: min-content 50vh min-content 1fr; 
+    // justify-items: center;
+    align-items: center;
+    
+    background-image: url(./books.jpg);
+    background-size: cover;
+    height: 100vh;
+
+    @include respond(tab-port){
+        grid-template-rows: min-content 75vh repeat(2, 1fr);
+        height: 120vh;
+    }
+    @include respond(phone){
+        grid-template-rows: min-content 60vh repeat(2, 1fr);
+        height: 120vh;
+    }
+    &__middle{
+        grid-column: 3 / 9;
+        grid-row: 2 / 3;
+        text-align: center;
+        color: #fff;
+        font-size: 2rem;
+
+        display: grid;
+        grid-template-rows: repeat(4, min-content);
+        justify-items: center;
+        align-items: center;
+        @include respond(tab-port){
+            grid-column: 2 / 10;
+            font-size: 3.5rem;
+        }
+        @include respond(tab-port){
+            grid-column: 1 / -1;
+        }
+    }
+    &__sub{
+        @include respond(phone){
+            font-size: 3.5rem;
+        }
+    }
+    &__select{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        flex-grow: 1;
+        margin: 2rem 0;
+        height: 6rem;
+        overflow: hidden;
+        background-color: #fff;
+        color: black;
+        width: 90%;
+        border-radius: 1rem;
+        
+        @include respond(tab-port){
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            height: 100%;
+            background-color: inherit;
+        }
+
+    }
+    &__search{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-primary;
+        text-decoration: none;
+        transition: all .2s;
+        &:hover{
+            color: black;
+        }
+        @include respond(tab-port){
+            background-color: #fff;
+            margin: 1rem 0;
+            height: 7rem;
+            border-radius: .5rem;
+        }
+    }
+    &__dropSelect{
+        border: none;
+        font-size: 2rem;
+        color: gray;
+        text-align: center;
+        padding: 0rem 5rem;
+        &:focus{
+            outline: none;
+            color: black;
+        }
+        &:active{
+            outline: none;
+        }
+        @include respond(tab-port){
+            margin: 1rem 0;
+            height: 7rem;
+            border-radius: .5rem;
+            padding: 0rem 18rem;
+            font-size: 4rem;
+        }
+        @include respond(phone){
+            font-size: 3.5rem;   
+        }
+   }
+    &__searchIcon{
+        margin: 0 1rem;
+    }
+    &__add{
+        display: flex;
+        justify-self: start;
+        padding-left: 5rem;
+        &__underline{
+            color: #fff;
+        }
+    }
+    &__apps{
+        grid-row: 3 / 4;
+        grid-column: 1  / 4;
+        justify-self: flex-start;
+        margin-left: 10rem;
+        @include respond(tab-port){
+            grid-column: 2 / 10;
+            justify-self: center;
+            @include flex-colomn;
+            margin-left: 0rem;
+        }
+    }
+    &__appsPhotos{
+        display: flex;
+        cursor: pointer;
+    }
+    &__headApps{
+        text-align: end;
+        color: #fff;
+        font-size: 2.5rem;
+        @include respond(tab-port){
+            font-size: 5rem;
+        } 
+    }
+    &__appPhoto{
+        width: 17rem;
+        height: auto;
+        border-radius: 1rem;
+        margin: 0 .5rem;
+        @include respond(tab-port){
+            width: 30rem;
+        }
+    }
+    &__bars{
+        display: none;
+        @include respond(tab-port){
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            justify-self: center;
+            align-self: center;
+
+            display: block;
+            color: gray;
+            background-color: #fff;
+            padding: 1rem;
+            font-size: 8rem;
+            border-radius: .4rem;
+        }
+        @include respond(phone){
+            font-size: 8rem;
+            margin-top: 3rem;
+        }
+    }
+    &__sideDrawer{
+        position: relative;
+        grid-row: 1 / -1;
+        grid-column: 1 / 4;
+        background-color: rgb(54, 54, 54);
+        height: 100%;
+        color: #fff;
+        text-align: end;
+        font-size: 2.2rem;
+        font-weight: 400;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+
+        &__close{
+            color: #fff;
+            font-size: 3rem;
+            @include respond(tab-port){
+                font-size: 5rem;
+                grid-column: 1 / 6;
+            }
+        }
+        @include respond(tab-port){
+            font-size: 4.5rem;
+            grid-column: 1 / 6;
+        }
+        @include respond(phone){
+            font-size: 4rem;
+            grid-column: 1 / 6;
+        }
+    }
+    &__headSideElement{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__link{
+        text-decoration: none;
+        color: #fff;
+    }
+    &__sideElement, &__headSideElement{
+        border-bottom: .5px solid rgb(114, 111, 111);
+        padding: 1rem;
+        text-decoration: none;
+        color: #fff;
+    }
+}

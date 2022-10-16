@@ -1,0 +1,209 @@
+@import '../../abstract/mixins';
+.teachers{
+    @include grid;
+    height: 110vh;
+    background-color: rgb(243, 243, 243);
+    grid-row-gap: 5rem;
+    @include respond(tab-port){
+        grid-template-rows: repeat(3, min-content) 1fr;
+        height: 100%;
+    }
+    &__middle{
+        grid-column: 2 / 10;
+        grid-row: 2 / 4;
+        
+        display: grid;
+        grid-template-rows: 10% 1fr;
+        grid-row-gap: 4rem;
+        @include respond(tab-port){
+            grid-template-rows: repeat(2, min-content);
+        }
+        @include respond(phone){
+            grid-column: 1 / -1;
+        }
+    }
+    &__filter{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 5rem;
+        justify-items: center;
+        align-items: center;
+
+        @include respond(tab-port){
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: 1fr;
+            grid-row-gap: 2rem;
+        }
+    }
+    &__wordIcon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $color-primary;
+        font-size: 1.5rem;
+        background-color: #fff;
+        padding: 1rem 3rem;
+        width: 25rem;
+        border-radius: 5px;
+        text-decoration: none;
+        @include respond(tab-port){
+            width: 100%;
+            height: 8rem;
+            font-size: 3.5rem;
+        }
+
+    }
+    &__icon{
+        margin-left: .5rem;
+        font-size: 2rem;
+        @include respond(tab-port){
+            font-size: 4rem;
+        }
+    }
+    &__dropSelect{
+        padding: 1.5rem 7rem;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+        &:focus, &:active{
+            border: none;
+            outline: none;
+        }
+        @include respond(tab-port){
+            width: 100%;
+            padding: 2.5rem 25rem;
+            font-size: 4.5rem;
+        }
+    }
+    &__secondSection{
+        display: grid;
+        grid-template-rows: min-content 1fr;
+        grid-row-gap: 2rem;
+    }
+    &__sample{
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 5rem;
+        box-shadow: 0rem 1rem 3rem rgba( black, 0.2);
+        border-radius: 8px;
+
+        display: grid;
+        grid-template-columns: 20% 1fr 20%;
+
+        @include respond(tab-port){
+            grid-template-columns: 20% 1fr 30%;
+        }
+    }
+    &__subhead{
+        justify-self: flex-end;
+        @include respond(tab-port){
+            font-size: 2.5rem;
+        }
+    }
+    &__details{
+        display: grid;
+        grid-template-rows: repeat(4, min-content);
+        justify-items: flex-end;
+        align-content: center;
+        grid-row-gap: 1rem;
+        @include respond(tab-port){
+            grid-row: 1 / 2;
+            grid-column: 1 / 3;
+            justify-items: center;
+        }
+        @include respond(phone){
+            grid-column: 1 / -1;
+            grid-row: 2 / 3;
+        }
+    }
+    &__par{
+        text-align: end;
+        font-size: 1.8rem;
+        color: rgb(109, 108, 108);
+        @include respond(tab-port){
+            text-align: center;
+            font-size: 3rem;
+        }
+    }
+    &__experience{
+        display: flex;
+        @include respond(tab-port){
+            font-size: 2rem;
+            @include flex-colomn;
+
+        }
+    }
+    &__point{
+        margin-left: 1rem;
+    }
+    &__userImg{
+        width: auto;
+        height: 25rem;
+        justify-self: center;
+        align-self: center;
+        @include respond(tab-port){
+            grid-row: 1 / 2;
+            grid-column: 3 / 4;
+            height: 35rem;
+        }
+        @include respond(phone){
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+        }
+    }
+    &__salary{
+        display: grid;
+        grid-template-rows: min-content 1fr;
+        @include respond(tab-port){
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            justify-items: center;
+            align-items: center;
+        }
+        @include respond(phone){
+            grid-row: 3 / 4;
+        }
+    }
+    &__sPh{
+        justify-self: flex-end;
+        padding-top: 4rem;
+        color: rgb(109, 108, 108);
+        @include respond(tab-port){
+            justify-self: center;
+            font-size: 2.5rem;
+        }
+        
+    }
+    &__bookNow{
+        justify-self: center;
+        align-self: center;
+        font-size: 2rem;
+        background-color: $color-primary;
+        text-decoration: none;
+        color: #fff;
+        padding: 1rem 3rem;
+        border-radius: 5px;
+        cursor: pointer;
+        @include respond(tab-port){
+            font-size: 4rem;
+        }
+    }
+    &__stars{
+        font-size: 2rem;
+        color: $color-primary;
+        @include respond(tab-port){
+            font-size: 3.5rem;
+        }
+    }
+    &__salFlex{
+        display: flex;
+        align-items: center;
+        color: black;
+    }
+    &__name{
+        @include respond(tab-port){
+            font-size: 4rem;
+        }
+    }
+}
